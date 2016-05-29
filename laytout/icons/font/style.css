@@ -1,9 +1,9 @@
 @font-face {
     font-family: 'App-Icons';
     src:
-        url('fonts/App-Icons.ttf?vtj5lj') format('truetype'),
-        url('fonts/App-Icons.woff?vtj5lj') format('woff'),
-        url('fonts/App-Icons.svg?vtj5lj#App-Icons') format('svg');
+        url('fonts/App-Icons.ttf?qacnzp') format('truetype'),
+        url('fonts/App-Icons.woff?qacnzp') format('woff'),
+        url('fonts/App-Icons.svg?qacnzp#App-Icons') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -277,5 +277,86 @@
 }
 .icon-brasil:before {
     content: "\e954";
+}
+.icon-uf-ac:before {
+    content: "\e955";
+}
+.icon-uf-al:before {
+    content: "\e956";
+}
+.icon-uf-ap:before {
+    content: "\e957";
+}
+.icon-uf-am:before {
+    content: "\e958";
+}
+.icon-uf-ba:before {
+    content: "\e959";
+}
+.icon-uf-ce:before {
+    content: "\e95a";
+}
+.icon-uf-df:before {
+    content: "\e95b";
+}
+.icon-uf-es:before {
+    content: "\e95c";
+}
+.icon-uf-go:before {
+    content: "\e95d";
+}
+.icon-uf-ma:before {
+    content: "\e95e";
+}
+.icon-uf-mt:before {
+    content: "\e95f";
+}
+.icon-uf-ms:before {
+    content: "\e960";
+}
+.icon-uf-mg:before {
+    content: "\e961";
+}
+.icon-uf-pa:before {
+    content: "\e962";
+}
+.icon-uf-pb:before {
+    content: "\e963";
+}
+.icon-uf-pr:before {
+    content: "\e964";
+}
+.icon-uf-pe:before {
+    content: "\e965";
+}
+.icon-uf-pi:before {
+    content: "\e966";
+}
+.icon-uf-rj:before {
+    content: "\e967";
+}
+.icon-uf-rn:before {
+    content: "\e968";
+}
+.icon-uf-rs:before {
+    content: "\e969";
+}
+.icon-uf-ro:before {
+    content: "\e96a";
+}
+.icon-uf-rr:before {
+    content: "\e96b";
+}
+.icon-uf-sc:before {
+    content: "\e96c";
+}
+.icon-uf-sp:before {
+    content: "\e96d";
+}
+.icon-uf-se:before {
+    content: "\e96e";
+}
+.icon-uf-to:before {
+    content: "\e96f";
 }
 
