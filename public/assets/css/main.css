@@ -268,11 +268,9 @@ section.success a.active {
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  cursor: pointer;
 }
-#nas-redes .brasil-map svg a:hover path {
+#nas-redes .brasil-map svg .highlight-uf path {
   fill: #0f7864 !important;
-  /*filter: url(#drop-shadow-filter);*/
 }
 .btn-outline {
   color: white;
