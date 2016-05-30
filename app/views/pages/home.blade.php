@@ -36,14 +36,14 @@
             </div>
         </div>
         <div class="row">
-            @foreach($obras_mais_vistas as $obra)
+            @foreach($obras_mais_vistas as $mais_vista)
                 <div class="col-sm-4">
                     <span class="highlight-uf icon-star"></span>
-                    <h5>{{$obra->nome}}</h5>
-                    <span class="icon-money"> {{$obra->valor}}</span>
+                    <h5>{{$mais_vista->obra->nome}}</h5>
+                    <span class="icon-money"> {{$mais_vista->obra->valor}}</span>
                     <br>
-                    <span class="icon-twitter"> 12332</span>
-                    <span class="icon-comment"> 123123</span>
+                    <span class="icon-twitter"> {{$mais_vista->twitterTotal}}</span>
+                    <span class="icon-comment"> {{$mais_vista->disqusTotal}}</span>
                 </div>
             @endforeach
         </div>

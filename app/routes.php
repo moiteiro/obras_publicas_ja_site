@@ -14,3 +14,6 @@
 Route::get('/',    		['as' => 'home', 	'uses'	=> 'PagesController@home']);
 
 Route::resource('/obras', "ObrasController");
+
+Route::get('comentarios/novas_threads', "ComentariosController@getNewThreads");
+Route::get('comentarios/atualizar_threads', "ComentariosController@updateCommentsCount");
