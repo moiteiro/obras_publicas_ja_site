@@ -15,8 +15,10 @@
             <div class="col-xs-12 col-sm-6 header-form">
                 <div class="input-group input-group-lg">
                   <span class="input-group-addon icon-brasil"></span>
-                  <input type="text" class="form-control" name="estado" placeholder="Um estado" aria-describedby="estado">
-                </div>  
+                  <form action="/obras" method="get">
+                    <input type="text" class="form-control" name="estado" placeholder="Um estado" aria-describedby="estado">
+                  </form>
+                </div>
             </div>
         </div>
     </div>
@@ -34,12 +36,16 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4"></div>
+            @foreach($obras_mais_vistas as $obra)
+                <div class="col-sm-4">
+                    <span class="highlight-uf icon-star"></span>
+                    <h5>{{$obra->nome}}</h5>
+                    <span class="icon-money"> {{$obra->valor}}</span>
+                    <br>
+                    <span class="icon-twitter"> 12332</span>
+                    <span class="icon-comment"> 123123</span>
+                </div>
+            @endforeach
         </div>
     </div>
 </section>

@@ -269,9 +269,15 @@ section.success a.active {
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-#nas-redes .brasil-map svg .highlight-uf path {
+.highlight-uf {
+  font-size: 50px;
+}
+
+#nas-redes .brasil-map svg .highlight-uf {
+  font-size: 50px;
   fill: #0f7864 !important;
 }
+
 .btn-outline {
   color: white;
   font-size: 20px;
