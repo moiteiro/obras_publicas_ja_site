@@ -38,8 +38,11 @@
         <div class="row">
             @foreach($obras_mais_vistas as $mais_vista)
                 <div class="col-sm-4">
-                    <span class="highlight-uf icon-star"></span>
+
+                    <span class="highlight-uf icon-uf-{{strtolower($mais_vista->obra->estado->sigla)}}"></span>
                     <h5>{{$mais_vista->obra->nome}}</h5>
+                    <span>{{$mais_vista->obra->estado->nome}}</span>
+                    <br>
                     <span class="icon-money"> {{$mais_vista->obra->valor}}</span>
                     <br>
                     <span class="icon-twitter"> {{$mais_vista->twitterTotal}}</span>
