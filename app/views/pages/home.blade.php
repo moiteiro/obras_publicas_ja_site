@@ -13,12 +13,12 @@
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-6 header-form">
-                <div class="input-group input-group-lg">
-                  <span class="input-group-addon icon-brasil"></span>
-                  <form action="/obras" method="get">
-                    <input type="text" class="form-control" name="estado" placeholder="Um estado" aria-describedby="estado">
-                  </form>
-                </div>
+                <form action="/obras" method="get">
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-addon icon-brasil"></span>
+                        <input type="text" class="form-control" name="estado" placeholder="Um estado" aria-describedby="estado">
+                    </div>
+                </form>
             </div>
         </div>
     </div>
