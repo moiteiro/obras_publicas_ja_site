@@ -18,6 +18,25 @@
             <div class="col-lg-12">
                 <h2>{{$obra->nome}}</h2>
             </div>
+
+            <div class="col-lg-12">
+                <h4>Detalhes</h4>
+                <ul>
+                    <li>Estado: {{$obra->estado->nome}}</li>
+                    <li>Valor: {{$obra->valor}}</li>
+                    <li>In&iacute;cio do Projeto: {{$obra->dataInicio->format('m/Y')}}</li>
+                    <li>T&eacute;rmino previsto: {{$obra->dataPrevisao->format('m/Y')}}</li>
+                    @if ($obra->situacao == "concluída")
+                        <li>Finalizado em: {{$obra->dataConclusao->format('m/Y')}}</li>
+                    @endif
+                </ul>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur volutpat, nunc luctus ultricies ullamcorper, mi dolor malesuada enim, nec vehicula augue lorem id lorem. Curabitur consectetur magna vel dolor cursus, vitae sodales ligula congue. Praesent ac diam leo. Nulla facilisi. Etiam rutrum ac eros eu blandit. Sed vel arcu leo. Phasellus in tellus ut nibh porttitor varius. Aliquam nulla ipsum, semper a gravida et, imperdiet non magna.
+                </p>
+                <p>
+                    Fusce ultrices nisi vitae est tincidunt, quis tempor tortor feugiat. Sed a ornare mauris, vitae placerat mauris. Etiam tincidunt dapibus mi, non congue mi. Sed sagittis ullamcorper ligula a feugiat. Nunc sit amet risus ante. Morbi lacinia nibh mollis diam eleifend, eget interdum nulla consectetur. Nam ullamcorper cursus turpis vel luctus. Suspendisse efficitur ultricies metus, et pellentesque turpis porttitor id. Nullam bibendum magna hendrerit augue posuere tristique. Donec nulla mauris, luctus id tristique ut, rhoncus nec quam. Cras sed risus eget metus venenatis vehicula quis eget massa. Donec aliquam convallis eleifend. Morbi convallis pretium sapien finibus vestibulum. Sed ultricies aliquet risus, at porttitor orci egestas at. Aenean ullamcorper enim risus, a malesuada mauris consectetur eu. In ornare felis nibh, in dapibus nulla pellentesque sed.
+                </p>
+            </div>
         </div>
 		
 		<!-- progress bar -->
@@ -44,7 +63,7 @@
         </div>
         
         <div class='project-social-links'>
-            <div class="fb-like" data-href="{{Request::url()}}" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+            <div class="fb-share-button" data-href="{{Request::url()}}" data-layout="button_count" data-mobile-iframe="true"></div>
 
             <a href="https://twitter.com/share" class="twitter-share-button" data-lang="pt-br"></a>
         </div>
@@ -62,13 +81,21 @@
 
 <!-- Facebook -->
 <script>
-    (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=278225112566275&version=v2.0";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '278225112566275',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
 </script>
 
 <!-- Twitter -->
@@ -102,4 +129,5 @@ s.setAttribute('data-timestamp', +new Date());
 (d.head || d.body).appendChild(s);
 })();
 </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 @stop
