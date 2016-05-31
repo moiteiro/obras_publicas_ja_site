@@ -10,20 +10,28 @@ class ObrasController extends BaseController {
 
 	public function index() {
 
-		$input = Input::all();
+		$input = Input::except('page');
 		$estados = Estado::all();
 
+
 		$obras = [];
+
+		$obras = Obra::whereRaw("1");
 
 		if (isset($input['estado']) && $input['estado'] != 'todos') {
 			$estado = Estado::where('nome', '=', $input['estado'])->get()->first();
 
 			if ($estado != NULL)
-				$obras = $estado->obras()->paginate(10);
-
-		} else {
-			$obras = Obra::paginate(10);
+				$obras = $obras->where("estadoId", '=', $estado->id);
 		}
+
+		if (isset($input['situacao']) && $input['situacao'] != 'todos') {
+			$obras = $obras->where('situacao', 'like', $input['situacao']);
+		}
+
+		$obras = $obras->paginate(10);
+
+		$obras->appends($input);
 
 		return View::make('obras.index', compact('input', 'obras', 'estados'));
 	}
