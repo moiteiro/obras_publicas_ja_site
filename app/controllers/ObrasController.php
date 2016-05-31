@@ -11,10 +11,11 @@ class ObrasController extends BaseController {
 	public function index() {
 
 		$input = Input::all();
+		$estados = Estado::all();
 
 		$obras = [];
 
-		if (isset($input['estado'])) {
+		if (isset($input['estado']) && $input['estado'] != 'todos') {
 			$estado = Estado::where('nome', '=', $input['estado'])->get()->first();
 
 			if ($estado != NULL)
@@ -24,7 +25,7 @@ class ObrasController extends BaseController {
 			$obras = Obra::paginate(10);
 		}
 
-		return View::make('obras.index', compact('input', 'obras'));
+		return View::make('obras.index', compact('input', 'obras', 'estados'));
 	}
 
 	public function show($id) {
@@ -77,7 +78,7 @@ class ObrasController extends BaseController {
 				$totalInDays = $start_date->diff($today)->days;
 				$estimated = $start_date->diff($estimate_date)->days;
 
-				$barra_de_progresso['status'] = "Concluída com atrasos";
+				$barra_de_progresso['status'] = "Atrasada";
 				$barra_de_progresso['blue_bar'] = round($estimated / $totalInDays * 100);
 				$barra_de_progresso['red_bar'] = 100 - $barra_de_progresso['blue_bar'];
 			}

@@ -20,7 +20,7 @@ class Obra extends Eloquent{
 		'valor'
 	];
 
-	public static $status = [
+	public static $situacao = [
 		''	=> 'todos',
 		'1' => 'em andamento',
 		'2' => 'concluída',
