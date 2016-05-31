@@ -40,14 +40,18 @@ class ObrasController extends BaseController {
 	}
 
 	public function show($id) {
-		$obra = Obra::findOrFail($id);
+		$obra = Obra::find($id);
 
-		$start_date = Carbon::createFromFormat('Y-m-d', $obra->dataInicio);
-		$estimate_date = Carbon::createFromFormat('Y-m-d', $obra->dataPrevisao);
+		if ($obra == NULL) {
+			return View::make('pages.not_found');
+		}
+
+		$obra->dataInicio = $start_date = Carbon::createFromFormat('Y-m-d', $obra->dataInicio);
+		$obra->dataPrevisao = $estimate_date = Carbon::createFromFormat('Y-m-d', $obra->dataPrevisao);
 		$today = Carbon::today();
 
 		if ($obra->dataConclusao != NULL && $obra->dataConclusao != "0000-00-00")
-			$finished_date = Carbon::createFromFormat('Y-m-d', $obra->dataConclusao);
+			$obra->dataConclusao = $finished_date = Carbon::createFromFormat('Y-m-d', $obra->dataConclusao);
 
 		$barra_de_progresso = [
 			'status' => "",
