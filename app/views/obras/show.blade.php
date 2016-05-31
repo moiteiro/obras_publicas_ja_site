@@ -1,15 +1,48 @@
 @extends('layouts.application')
 
 @section('content')
-
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 title-style text-center">
+        	<!-- Conserta isso ai, Caju!!! -->
+        	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+            <div class="col-lg-12">
                 <h2>{{$obra->nome}}</h2>
             </div>
         </div>
-        <div id="disqus_thread"></div>
+		
+		<!-- progress bar -->
+        <div class="row">
+        	<div class="col-lg-12">
+                
+			<?php 
+
+			$opacity = 1.0;
+			if ($obra->situacao == 'concluída')
+				$opacity = 0.40;
+			?>
+
+			<!-- Conserta isso ai, Caju!!! -->
+        	<br><br><br><br><br>
+			
+			<div id="barra_de_progresso" style="width: 100%; height: 50px; background:gray; padding: 5px; opacity: {{$opacity}}">
+				<div id="barra_previsto" style="width: {{$barra_de_progresso['blue_bar']}}%; height: 100%; background: blue; float: left;"></div>
+				<div id="barra_atraso" style="width: {{$barra_de_progresso['red_bar']}}%; height: 100%; background: red; float: left;"></div>
+			</div>
+			<p>{{$barra_de_progresso['status']}}</p>
+
+            </div>
+        </div>
+
+        <!-- Conserta isso ai, Caju!!! -->
+        <br><br><br><br><br>
+
+        <div class="row">
+        	<div class="col-lg-12">
+            	<div id="disqus_thread"></div>
+        	</div>
+        </div>        
     </div>
 </section>
 <script>
