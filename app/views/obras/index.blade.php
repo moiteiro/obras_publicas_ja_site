@@ -16,6 +16,12 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<form class="form-inline">
+
+					<div class="form-group">
+						<label for="nome_form">Nome</label>
+						<input type="text" class="form-control" name="nome" id="nome_form">
+					</div>
+
 					<div class="form-group">
 						<label for="estado_form">Estado</label>
 						<select name="estado" class="form-control" id="estado_form">
@@ -28,7 +34,6 @@
 								</option>
 							@endforeach
 						</select>
-						<?php if(isset($input['estado'])) unset($input['estado']) ?>
 					</div>
 
 					<div class="form-group">
@@ -42,13 +47,7 @@
 								</option>
 							@endforeach
 						</select>
-
-						<?php if(isset($input['situacao'])) unset($input['situacao']) ?>
 					</div>
-
-					@foreach($input as $index => $value)
-						<input type="hidden" name="{{$index}}" value="{{$value}}">
-					@endforeach
 
 					<input type="submit" class="btn btn-default" value="Filtrar">
 				</form>

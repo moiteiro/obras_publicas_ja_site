@@ -13,7 +13,6 @@ class ObrasController extends BaseController {
 		$input = Input::except('page');
 		$estados = Estado::all();
 
-
 		$obras = [];
 
 		$obras = Obra::whereRaw("1");
@@ -23,6 +22,10 @@ class ObrasController extends BaseController {
 
 			if ($estado != NULL)
 				$obras = $obras->where("estadoId", '=', $estado->id);
+		}
+
+		if (isset($input['nome']) && trim($input['nome']) != '') {
+			$obras = $obras->where("nome", 'like', "%$input[nome]%");
 		}
 
 		if (isset($input['situacao']) && $input['situacao'] != 'todos') {
