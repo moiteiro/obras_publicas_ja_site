@@ -10,7 +10,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="footer-col col-md-6">
+                <div class="footer-col footer-about col-md-6">
                     <h3>Sobre Obras Públicas Já</h3>
                     <p>Nossa missão é organizar informações de obras públicas dos governos estaduais para o acompanhamento da evolução, além da interação com as redes sociais.</p>
                 </div>

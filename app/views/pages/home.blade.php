@@ -25,7 +25,7 @@
 </header>
 
 <!-- Mais Vistas Grid Section -->
-<section id="mais-vistas">
+<section class="obra-section">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 title-style text-center">
@@ -37,7 +37,6 @@
         </div>
         <div class="row">
             @foreach($obras_mais_vistas as $mais_vista)
-                
                 <a href="/obras/{{$mais_vista->obra->id}}" class="obra-container">
                     <div class="col-sm-6">
 

@@ -2,20 +2,21 @@
 
 @section('content')
 
-<section>
+<section class="obra-section default-section">
     <div class="container">
-        <div class="row">
-        	<!-- Conserta isso ai, Caju!!! -->
-        	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
+        <div class="row">
             <div class="col-lg-12 title-style text-center">
-                <h2>Lista de Obras</h2>
+                <h2>Listas de Obras</h2>
+                <div class="title-icon">
+                    <hr><span class="icon-marker"></span><hr>
+                </div>
             </div>
-		
-		</div>
+        </div>
+
 		<div class="row">
 			<div class="col-lg-12">
-				<form class="form-inline">
+				<form class="form-inline obra-filter">
 
 					<div class="form-group">
 						<label for="nome_form">Nome</label>
@@ -55,19 +56,26 @@
 		</div>
 
 		<div class="row">
-			<div class="col-lg-12">
-				@if(count($obras) > 0)
-		            @foreach($obras as $obra)
-		            	<h4><a href="/obras/{{$obra->id}}">{{$obra->nome}}</a></h4>
-		            	<span>{{$obra->estado->nome}}</span>
-		            	<br><br>
-		            @endforeach
-	            @else
-	            	<p>N&atilde;o h&aacute; obras cadastradas para o seu estado</p>
-	            @endif
-				
-				<div class="pagination"> {{ $obras->links() }} </div>
-			</div>
+			
+			@if(count($obras) > 0)
+	            @foreach($obras as $obra)
+	                <a href="/obras/{{$obra->id}}" class="obra-container">
+	                    <div class="col-sm-6">
+	                        <div class="obra-uf">
+	                            <span class="icon-uf-{{strtolower($obra->estado->sigla)}}"></span>
+	                        </div>
+	                        <div class="obra-info">
+	                            <h4>{{$obra->nome}}</h4>
+	                            <p><span class="icon-brasil"></span> {{ $obra->estado->nome }}</p>
+	                            <p class="obra-value numeric"><span class="icon-money"></span> R${{number_format($obra->valor,2,',','.')}}</p>
+	                        </div>
+	                    </div>
+	                </a>
+	            @endforeach
+			@else
+				<p>N&atilde;o h&aacute; obras cadastradas para o seu estado</p>
+			@endif
+			<div class="pagination"> {{ $obras->links() }} </div>
         </div>
     </div>
 </section>
