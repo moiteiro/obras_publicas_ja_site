@@ -31,7 +31,7 @@
                 <h4>Detalhes</h4>
                 <ul>
                     <li><span class="icon-brasil"></span> Estado: {{$obra->estado->nome}}</li>
-                    <li><span class="icon-money"></span> Valor: {{$obra->valor}}</li>
+                    <li><span class="icon-money"></span> Valor: R${{number_format($obra->valor,2,',','.')}}</li>
                     <li><span class="icon-calendar"></span> In&iacute;cio do Projeto: {{$obra->dataInicio->format('m/Y')}}</li>
                     <li><span class="icon-calendar"></span> T&eacute;rmino previsto: {{$obra->dataPrevisao->format('m/Y')}}</li>
                     @if ($obra->situacao == "concluída")
