@@ -40,9 +40,13 @@
                 
                 <a href="/obras/{{$mais_vista->obra->id}}" class="obra-container">
                     <div class="col-sm-6">
-                        <span class="icon-uf-{{strtolower($mais_vista->obra->estado->sigla)}}"></span>
+
+                        <div class="obra-uf">
+                            <span class="icon-uf-{{strtolower($mais_vista->obra->estado->sigla)}}"></span>
+                        </div>
                         <div class="obra-info">
                             <h4>{{$mais_vista->obra->nome}}</h4>
+                            <p><span class="icon-brasil"></span> {{ $mais_vista->obra->estado->nome }}</p>
                             <p class="obra-value numeric"><span class="icon-money"></span> R${{number_format($mais_vista->obra->valor,2,',','.')}}</p>
                             <div class="obra-social-counter">
                                 <span><span class="icon-twitter"></span> {{$mais_vista->twitterTotal}}</span>

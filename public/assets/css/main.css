@@ -189,6 +189,18 @@ header p {
   .navbar .navbar-nav {
     text-align: center;
   }
+  .obra-container > div {
+    font-size: 13px !important;
+  }
+  .obra-container > div .obra-uf {
+    font-size: 70px !important;
+  }
+  .obra-container > div h4 {
+    font-size: 15px;
+  }
+  .obra-container > div .obra-info {
+    width: 70% !important;
+  }
 }
 .navbar-default {
   font-size: 1.5em;
@@ -397,38 +409,114 @@ footer .footer-below {
 .scroll-top .btn:focus {
   outline: none;
 }
-.obra-container {
-  color: #37474F !important;
-  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial Narrow, sans-serif;
-}
 .obra-container :hover,
 .obra-container :focus,
 .obra-container :active {
   color: inherit;
 }
-.obra-container > div > span {
+.obra-container p {
+  margin: 0;
+}
+.obra-container > div {
+  color: #37474F !important;
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial Narrow, sans-serif;
+  font-size: 15px;
+  margin-bottom: 15px;
+  display: table;
+}
+.obra-container > div .obra-uf {
   font-size: 100px;
   float: left;
-  margin-right: 10px;
+  margin-right: 7px;
   text-shadow: 2px 1px 5px rgba(0, 0, 0, 0.9);
 }
 .obra-container > div .obra-info {
+  float: left;
+  width: 80%;
   margin-top: 10px;
 }
 .obra-container > div .obra-info h4 {
   text-transform: initial;
   margin: 0;
 }
-.obra-container > div .obra-info .obra-value {
-  font-size: 2em;
-  margin: 0;
-}
 .obra-container > div .obra-info .obra-social-counter {
-  font-size: 1.8em;
+  font-size: 19px;
+}
+.obra-container .icon-uf-ac {
+  color: #FFD54F;
+}
+.obra-container .icon-uf-al {
+  color: #7986CB;
+}
+.obra-container .icon-uf-ap {
+  color: #4DB6AC;
 }
 .obra-container .icon-uf-ba {
   color: #E57373;
 }
+.obra-container .icon-uf-ce {
+  color: #AED581;
+}
+.obra-container .icon-uf-df {
+  color: #A3B282;
+}
 .obra-container .icon-uf-es {
   color: #F48FB1;
+}
+.obra-container .icon-uf-go {
+  color: #DCE775;
+}
+.obra-container .icon-uf-ma {
+  color: #AD7070;
+}
+.obra-container .icon-uf-mt {
+  color: #378AEF;
+}
+.obra-container .icon-uf-ms {
+  color: #81D4FA;
+}
+.obra-container .icon-uf-mg {
+  color: white;
+}
+.obra-container .icon-uf-pa {
+  color: #E81E1E;
+}
+.obra-container .icon-uf-pb {
+  color: #BF1C1C;
+}
+.obra-container .icon-uf-pr {
+  color: #40A59B;
+}
+.obra-container .icon-uf-pe {
+  color: #7068E9;
+}
+.obra-container .icon-uf-pi {
+  color: #a8aa8a;
+}
+.obra-container .icon-uf-rj {
+  color: #68CBF8;
+}
+.obra-container .icon-uf-rn {
+  color: #ceeacf;
+}
+.obra-container .icon-uf-rs {
+  color: #aa310f;
+}
+.obra-container .icon-uf-ro {
+  color: #4692dd;
+}
+.obra-container .icon-uf-rr {
+  color: #83daf7;
+}
+.obra-container .icon-uf-sc {
+  color: #AED581;
+}
+.obra-container .icon-uf-sp {
+  color: #8D6E63;
+}
+.obra-container .icon-uf-se {
+  color: #ad913e;
+}
+.obra-container .icon-uf-to {
+  color: #FF9800;
 }

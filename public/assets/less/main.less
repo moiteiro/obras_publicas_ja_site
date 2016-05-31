@@ -217,6 +217,25 @@ header {
 			text-align:center;
 		}
 	}
+	.obra-container
+	{
+		> div
+		{
+			font-size:13px !important;
+			.obra-uf
+			{
+				font-size:70px !important;
+			}
+			h4
+			{
+				font-size:15px;
+			}
+			.obra-info
+			{
+				width:70% !important;
+			}
+		}
+	}
 }
 
 .navbar-default
@@ -459,41 +478,71 @@ footer
 
 .obra-container
 {
-	color: @font-color !important;
-	font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial Narrow, sans-serif;
 	:hover, :focus, :active
 	{
 		color: inherit;
-	} 
+	}
+	p
+	{
+		margin:0;
+	}
 	> div
 	{
-		> span
+		color: @font-color !important;
+		font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial Narrow, sans-serif;
+		font-size:15px;
+		margin-bottom:15px;
+		display:table;
+		.obra-uf
 		{
 			font-size:100px;
 			float:left;
-			margin-right:10px;
+			margin-right:7px;
 			text-shadow:@text-cshadow;
 		}
 		.obra-info
 		{
+			float:left;
+			width:80%;
 			margin-top:10px;
 			h4 
 			{
 				text-transform:initial;
 				margin:0;
 			}
-			.obra-value
-			{
-				font-size:2em;
-				margin:0;
-			}
 			.obra-social-counter
 			{
-				font-size:1.8em;
+				font-size:19px;
 			}
 		}
 	}
-
+	
+	.icon-uf-ac {color:#FFD54F;}
+	.icon-uf-al {color:#7986CB;}
+	.icon-uf-ap {color:#4DB6AC;}
 	.icon-uf-ba {color:#E57373;}
+	.icon-uf-ce {color:#AED581;}
+	.icon-uf-df {color:#A3B282;}
 	.icon-uf-es {color:#F48FB1;}
+	.icon-uf-go {color:#DCE775;}
+	.icon-uf-ma {color:#AD7070;}
+	.icon-uf-mt {color:#378AEF;}
+	.icon-uf-ms {color:#81D4FA;}
+	.icon-uf-mg {color:white;}
+	.icon-uf-pa {color:#E81E1E;}
+	.icon-uf-pb {color:#BF1C1C;}
+	.icon-uf-pr {color:#40A59B;}
+	.icon-uf-pe {color:#7068E9;}
+	.icon-uf-pi {color:#a8aa8a;}
+	.icon-uf-rj {color:#68CBF8;}
+	.icon-uf-rn {color:#ceeacf;}
+	.icon-uf-rs {color:#aa310f;}
+	.icon-uf-ro {color:#4692dd;}
+	.icon-uf-rr {color:#83daf7;}
+	.icon-uf-sc {color:#AED581;}
+	.icon-uf-sp {color:#8D6E63;}
+	.icon-uf-se {color:#ad913e;}
+	.icon-uf-to {color:#FF9800;}
 }
+
+
