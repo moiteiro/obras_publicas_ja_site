@@ -39,6 +39,9 @@ h6 {
 .img-centered {
   margin: 0 auto;
 }
+.numeric {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 .title-style {
   color: #37474F;
 }
@@ -269,15 +272,9 @@ section.success a.active {
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-.highlight-uf {
-  font-size: 50px;
-}
-
-#nas-redes .brasil-map svg .highlight-uf {
-  font-size: 50px;
+#nas-redes .brasil-map svg .highlight-uf path {
   fill: #0f7864 !important;
 }
-
 .btn-outline {
   color: white;
   font-size: 20px;
@@ -399,4 +396,39 @@ footer .footer-below {
 }
 .scroll-top .btn:focus {
   outline: none;
+}
+.obra-container {
+  color: #37474F !important;
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial Narrow, sans-serif;
+}
+.obra-container :hover,
+.obra-container :focus,
+.obra-container :active {
+  color: inherit;
+}
+.obra-container > div > span {
+  font-size: 100px;
+  float: left;
+  margin-right: 10px;
+  text-shadow: 2px 1px 5px rgba(0, 0, 0, 0.9);
+}
+.obra-container > div .obra-info {
+  margin-top: 10px;
+}
+.obra-container > div .obra-info h4 {
+  text-transform: initial;
+  margin: 0;
+}
+.obra-container > div .obra-info .obra-value {
+  font-size: 2em;
+  margin: 0;
+}
+.obra-container > div .obra-info .obra-social-counter {
+  font-size: 1.8em;
+}
+.obra-container .icon-uf-ba {
+  color: #E57373;
+}
+.obra-container .icon-uf-es {
+  color: #F48FB1;
 }

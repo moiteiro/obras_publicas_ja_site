@@ -22,7 +22,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li class="hidden">
-                    <a href="#page-top"></a>
+                    <a href="/#page-top"></a>
                 </li>
                 <li class="page-scroll">
                     <a href="/">Início</a>
@@ -44,11 +44,11 @@
                     
                 </li>
                 <li class="page-scroll">
-                    <a href="/obras">Obras</a>
+                    <a href="obras">Obras</a>
                 </li>
-                <li class="page-scroll">
-                    <a href="index.html#contact">Contato</a>
-                </li>
+                <!--<li class="page-scroll">
+                    <a href="#contact">Contato</a>
+                </li>-->
             </ul>
         </div>
         <!-- /.navbar-collapse -->

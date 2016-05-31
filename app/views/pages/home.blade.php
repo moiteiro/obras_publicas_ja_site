@@ -37,21 +37,20 @@
         </div>
         <div class="row">
             @foreach($obras_mais_vistas as $mais_vista)
-                <div class="col-sm-4">
-
-                    <span class="highlight-uf icon-uf-{{strtolower($mais_vista->obra->estado->sigla)}}"></span>
-
-                    <a href="/obras/{{$mais_vista->obra->id}}">
-                        <h5>{{$mais_vista->obra->nome}}</h5>
-                    </a>
-                    
-                    <span>{{$mais_vista->obra->estado->nome}}</span>
-                    <br>
-                    <span class="icon-money"> {{$mais_vista->obra->valor}}</span>
-                    <br>
-                    <span class="icon-twitter"> {{$mais_vista->twitterTotal}}</span>
-                    <span class="icon-comment"> {{$mais_vista->disqusTotal}}</span>
-                </div>
+                
+                <a href="/obras/{{$mais_vista->obra->id}}" class="obra-container">
+                    <div class="col-sm-6">
+                        <span class="icon-uf-{{strtolower($mais_vista->obra->estado->sigla)}}"></span>
+                        <div class="obra-info">
+                            <h4>{{$mais_vista->obra->nome}}</h4>
+                            <p class="obra-value numeric"><span class="icon-money"></span> R${{number_format($mais_vista->obra->valor,2,',','.')}}</p>
+                            <div class="obra-social-counter">
+                                <span><span class="icon-twitter"></span> {{$mais_vista->twitterTotal}}</span>
+                                <span><span class="icon-comment"></span> {{$mais_vista->disqusTotal}}</span>                               
+                            </div>
+                        </div>
+                    </div>
+                </a>
             @endforeach
         </div>
     </div>
