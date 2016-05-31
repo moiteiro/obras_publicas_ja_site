@@ -9,33 +9,35 @@
 
 
 @section('content')
-<section>
+<section class="default-section">
     <div class="container">
+
         <div class="row">
-        	<!-- Conserta isso ai, Caju!!! -->
-        	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <div class="col-lg-12 title-style text-center">
+                <h2>Dados da Obra</h2>
+                <div class="title-icon">
+                    <hr><span class="icon-marker"></span><hr>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
 
             <div class="col-lg-12">
-                <h2>{{$obra->nome}}</h2>
+                <h2><span class="icon-text"></span> {{$obra->nome}}</h2>
             </div>
 
-            <div class="col-lg-12">
+            <div class="col-lg-12 obra-detail">
                 <h4>Detalhes</h4>
                 <ul>
-                    <li>Estado: {{$obra->estado->nome}}</li>
-                    <li>Valor: {{$obra->valor}}</li>
-                    <li>In&iacute;cio do Projeto: {{$obra->dataInicio->format('m/Y')}}</li>
-                    <li>T&eacute;rmino previsto: {{$obra->dataPrevisao->format('m/Y')}}</li>
+                    <li><span class="icon-brasil"></span> Estado: {{$obra->estado->nome}}</li>
+                    <li><span class="icon-money"></span> Valor: {{$obra->valor}}</li>
+                    <li><span class="icon-calendar"></span> In&iacute;cio do Projeto: {{$obra->dataInicio->format('m/Y')}}</li>
+                    <li><span class="icon-calendar"></span> T&eacute;rmino previsto: {{$obra->dataPrevisao->format('m/Y')}}</li>
                     @if ($obra->situacao == "concluída")
-                        <li>Finalizado em: {{$obra->dataConclusao->format('m/Y')}}</li>
+                        <li><span class="icon-calendar"></span> Finalizado em: {{$obra->dataConclusao->format('m/Y')}}</li>
                     @endif
                 </ul>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur volutpat, nunc luctus ultricies ullamcorper, mi dolor malesuada enim, nec vehicula augue lorem id lorem. Curabitur consectetur magna vel dolor cursus, vitae sodales ligula congue. Praesent ac diam leo. Nulla facilisi. Etiam rutrum ac eros eu blandit. Sed vel arcu leo. Phasellus in tellus ut nibh porttitor varius. Aliquam nulla ipsum, semper a gravida et, imperdiet non magna.
-                </p>
-                <p>
-                    Fusce ultrices nisi vitae est tincidunt, quis tempor tortor feugiat. Sed a ornare mauris, vitae placerat mauris. Etiam tincidunt dapibus mi, non congue mi. Sed sagittis ullamcorper ligula a feugiat. Nunc sit amet risus ante. Morbi lacinia nibh mollis diam eleifend, eget interdum nulla consectetur. Nam ullamcorper cursus turpis vel luctus. Suspendisse efficitur ultricies metus, et pellentesque turpis porttitor id. Nullam bibendum magna hendrerit augue posuere tristique. Donec nulla mauris, luctus id tristique ut, rhoncus nec quam. Cras sed risus eget metus venenatis vehicula quis eget massa. Donec aliquam convallis eleifend. Morbi convallis pretium sapien finibus vestibulum. Sed ultricies aliquet risus, at porttitor orci egestas at. Aenean ullamcorper enim risus, a malesuada mauris consectetur eu. In ornare felis nibh, in dapibus nulla pellentesque sed.
-                </p>
             </div>
         </div>
 		
@@ -49,9 +51,13 @@
 			if ($obra->situacao == 'concluída')
 				$opacity = 0.40;
 			?>
-
-			<!-- Conserta isso ai, Caju!!! -->
-        	<br><br><br><br><br>
+            
+             <div class="title-style text-center">
+                <h2>Evolução da Obra</h2>
+                <div class="title-icon">
+                    <hr><span class="icon-hourglass"></span><hr>
+                </div>
+            </div>           
 			
 			<div id="barra_de_progresso" style="width: 100%; height: 50px; background:gray; padding: 5px; opacity: {{$opacity}}">
 				<div id="barra_previsto" style="width: {{$barra_de_progresso['blue_bar']}}%; height: 100%; background: blue; float: left;"></div>

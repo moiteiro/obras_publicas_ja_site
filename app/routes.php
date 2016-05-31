@@ -13,6 +13,7 @@
 
 Route::get('/',    		['as' => 'home', 	'uses'	=> 'PagesController@home']);
 
+Route::get("obras/get_random_obra","ObrasController@getRandomObra");
 Route::resource('/obras', "ObrasController");
 
 Route::get('comentarios/novas_threads', "ComentariosController@getNewThreads");

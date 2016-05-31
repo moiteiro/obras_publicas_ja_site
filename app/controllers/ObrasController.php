@@ -102,6 +102,18 @@ class ObrasController extends BaseController {
 		return View::make('obras.show', compact('obra', 'barra_de_progresso'));
 	}
 
+	public function getRandomObra()
+	{
+		$obra = DB::table("Obra")->join("Estado","Obra.estadoId","=","Estado.id")
+					->select("Obra.nome",DB::raw("LOWER(sigla) sigla"))->orderBy(DB::raw("RAND()"))->take(1)->get();
+
+		if($obra && isset($obra[0]))
+		{
+			$obra[0]->nome = urlencode($obra[0]->nome);
+			echo json_encode($obra[0]);
+		}
+	}
+
 }
 
  ?>
