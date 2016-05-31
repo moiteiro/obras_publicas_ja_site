@@ -8,7 +8,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+
+            @if(Route::current()->getName() == 'home')
             <a class="navbar-brand" href="#page-top">
+            @else
+            <a class="navbar-brand" href="/#page-top">
+            @endif
             	{{ HTML::image('/assets/img/logo.png', "Obras Públicas Já", ['class' => 'img-responsive', 'width' => 336, 'height' => 35]) }}
             </a>
         </div>
