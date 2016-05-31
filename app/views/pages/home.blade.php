@@ -40,7 +40,11 @@
                 <div class="col-sm-4">
 
                     <span class="highlight-uf icon-uf-{{strtolower($mais_vista->obra->estado->sigla)}}"></span>
-                    <h5>{{$mais_vista->obra->nome}}</h5>
+
+                    <a href="/obras/{{$mais_vista->obra->id}}">
+                        <h5>{{$mais_vista->obra->nome}}</h5>
+                    </a>
+                    
                     <span>{{$mais_vista->obra->estado->nome}}</span>
                     <br>
                     <span class="icon-money"> {{$mais_vista->obra->valor}}</span>
