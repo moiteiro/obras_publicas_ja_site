@@ -37,7 +37,7 @@ class ComentariosController extends BaseController {
 
 		$disqus->setSecure(false);
 
-		$data =  Carbon::now()->subMonth();
+		$data =  Carbon::now()->subWeek();
 
 		$params = array(
 		   'forum'=>'obraspblicasj',
