@@ -409,7 +409,7 @@ footer .footer-below {
   margin-top: 50px;
 }
 .obra-section {
-  background: #EAE2E0 url(../img/mais_vistas_bg.jpg);
+  background: #EAE2E0;
   background-size: cover;
 }
 .obra-filter {
@@ -427,6 +427,10 @@ footer .footer-below {
   margin: 0 auto;
   display: table;
 }
+.obra-container {
+  height: 300px;
+}
+
 .obra-container :hover,
 .obra-container :focus,
 .obra-container :active {

@@ -46,74 +46,34 @@ class ObrasController extends BaseController {
 			return View::make('pages.not_found');
 		}
 
-		$obra->dataInicio = $start_date = Carbon::createFromFormat('Y-m-d', $obra->dataInicio);
-		$obra->dataPrevisao = $estimate_date = Carbon::createFromFormat('Y-m-d', $obra->dataPrevisao);
-		$today = Carbon::today();
 
-		if ($obra->dataConclusao != NULL && $obra->dataConclusao != "0000-00-00")
-			$obra->dataConclusao = $finished_date = Carbon::createFromFormat('Y-m-d', $obra->dataConclusao);
+		$inicio = Carbon::parse($obra->data_contrato);
+		$hoje = Carbon::now();
+		echo $inicio;
+		echo "<br>";
+		echo $hoje;
+		echo "<br>";
+		$total = $obra->data_total;
+		$previsto = $obra->data_inicio;
 
-		$barra_de_progresso = [
-			'status' => "",
-			'blue_bar' => "0",
-			'red_bar' => "0",
-		];
-
-		// melhorar esse checagem
-		// utilizar enum
-		if ($obra->situacao == "concluída") {
-			if ($estimate_date >= $finished_date) {
-				// concluida em tempo
-				$totalInDays = $start_date->diff($finished_date)->days;
-				$estimated = $start_date->diff($estimate_date)->days;
-				
-				$barra_de_progresso['status'] = "Concluída dentro do tempo previsto";
-				$barra_de_progresso['blue_bar'] = round($totalInDays / $estimated * 100);
-
-			} else {
-
-				$totalInDays = $start_date->diff($finished_date)->days;
-				$estimated = $start_date->diff($estimate_date)->days;
-
-				$barra_de_progresso['status'] = "Concluída com atrasos";
-				$barra_de_progresso['blue_bar'] = round($estimated / $totalInDays * 100);
-				$barra_de_progresso['red_bar'] = 100 - $barra_de_progresso['blue_bar'];
-
-			}
+		if ($previsto - $hoje->diffInDays($inicio) > 0) {
+			$barra_de_progresso['status'] ="Dentro do prazo";
+			$barra_de_progresso['blue_bar'] = $inicio->diffInDays($hoje) * 100 / $previsto;
+			$barra_de_progresso['red_bar'] = 0;
+		} else if ($obra->situacao == 2) {
+			$atraso = $obra->aditada;
+			$barra_de_progresso['blue_bar'] = $previsto * 100 / $total;
+			$barra_de_progresso['red_bar'] = $atraso * 100 / $total;
+			$barra_de_progresso['status'] ="Concluida";
 		} else {
-			if ($estimate_date > $today) {
-
-				$totalInDays = $start_date->diff($today)->days;
-				$estimated = $start_date->diff($estimate_date)->days;
-				
-				$barra_de_progresso['status'] = "Em andamento";
-				$barra_de_progresso['blue_bar'] = round($totalInDays / $estimated * 100);
-			} else {
-
-				$totalInDays = $start_date->diff($today)->days;
-				$estimated = $start_date->diff($estimate_date)->days;
-
-				$barra_de_progresso['status'] = "Atrasada";
-				$barra_de_progresso['blue_bar'] = round($estimated / $totalInDays * 100);
-				$barra_de_progresso['red_bar'] = 100 - $barra_de_progresso['blue_bar'];
-			}
+			$atraso = $previsto - $hoje->diffInDays($inicio);
+			$barra_de_progresso['blue_bar'] = abs($previsto * 100 / $inicio->diffInDays($hoje));
+			$barra_de_progresso['red_bar'] = abs($atraso * 100 / $inicio->diffInDays($hoje));
+			$barra_de_progresso['status'] ="Atrasada";
 		}
-
+		// dd($barra_de_progresso);
 		return View::make('obras.show', compact('obra', 'barra_de_progresso'));
 	}
-
-	public function getRandomObra()
-	{
-		$obra = DB::table("Obra")->join("Estado","Obra.estadoId","=","Estado.id")
-					->select("Obra.nome",DB::raw("LOWER(sigla) sigla"))->orderBy(DB::raw("RAND()"))->take(1)->get();
-
-		if($obra && isset($obra[0]))
-		{
-			$obra[0]->nome = urlencode($obra[0]->nome);
-			echo json_encode($obra[0]);
-		}
-	}
-
 }
 
  ?>

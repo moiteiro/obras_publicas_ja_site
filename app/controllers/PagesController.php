@@ -8,8 +8,7 @@ class PagesController extends BaseController {
 
 	public function home()
 	{
-		$obras_mais_vistas = Comentario::orderBy('disqusTotal', 'desc')->take(4)->get();
-		
+		$obras_mais_vistas = Obra::all();
 		return View::make('pages.home', compact('obras_mais_vistas'));
 	}
 }

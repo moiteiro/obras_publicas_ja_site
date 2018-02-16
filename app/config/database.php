@@ -54,10 +54,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'obraspublicasbd.codecrafting.net',
+			'host'      => 'localhost',
 			'database'  => 'obraspublicas',
-			'username'  => 'obraspublicas',
-			'password'  => 'obras@2016*',
+			'username'  => 'development',
+			'password'  => 'secret',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

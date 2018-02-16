@@ -4,20 +4,17 @@ use Carbon\Carbon;
 
 class Obra extends Eloquent{
 
-	// Changing defaut table
-	protected $table = 'Obra';
-
 	protected $fillable = [
+		'id',
 		'nome',
-		'estadoId',
 		'local',
 		'orgao',
-		'dataInicio',
-		'dataPrevisao',
-		'dataConclusao',
-		'tipo',
+		'data_contrato',
 		'situacao',
-		'valor'
+		'data_inicio',
+		'data_aditado',
+		'data_total',
+		'valor',
 	];
 
 	public static $situacao = [
